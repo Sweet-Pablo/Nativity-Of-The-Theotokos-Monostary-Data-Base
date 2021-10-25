@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="myscripts.js"></script>
+<title>Monostary Data Base</title>
+</head>
+<body>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Maven+Pro:500' rel='stylesheet' type='text/css'>
+    <div class="deco topdeco">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      </div>
+      
+      <h1>Monostary Data Base</h1>
+      <h3>
+        Search or Select a Task
+      </h3>
+    
+     <section class="list-wrap">
+    
+        <input class="tasksSearchBar" type="text" id="tasksInput" onkeyup="myFunction()" placeholder="Search in Tasks">
+
+        <ul id="tasks" class="tasks">
+          <p>A</p>
+          <li><a href="#">Adelle</a></li>
+          <li><a href="#">Agnes</a></li>
+          <p>B</p>        
+          <li><a href="#">Billy</a></li>
+          <li><a href="#">Bob</a></li>
+          <p>C</p>             
+          <li><a href="CandleMaking.html">Candle Making</a></li>
+          <li><a href="#">Christina</a></li>
+          <li><a href="#">Cindy</a></li>
+        </ul>
+
+        <input class="checklistsSearchBar" type="text" id="checklistsInput" onkeyup="myFunctionn()" placeholder="Search in Checklists">
+        <ul id="checklists" class="checklists">
+            <p>A</p>
+            <li><a href="#">Adelle</a></li>
+            <li><a href="#">Agnes</a></li>
+            <p>B</p>        
+            <li><a href="#">Billy</a></li>
+            <li><a href="#">Bob</a></li>
+            <p>C</p>             
+            <li><a href="#">Calvin</a></li>
+            <li><a href="#">Christina</a></li>
+            <li><a href="#">Cindy</a></li>
+          </ul>
+
+
+
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("tasksInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("tasks");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            function myFunctionn() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("checklistsInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("checklists");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            </script>
+</body>
+</html>
